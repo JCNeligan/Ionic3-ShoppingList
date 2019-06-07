@@ -31,4 +31,12 @@ export class EditShoppingItemPage {
       this.navCtrl.setRoot('HomePage');
     });
   }
+
+  removeItem(item:Item) {
+    this.shopping.removeItem(item)
+      .then(() => {
+        this.toast.show(`${item.name} deleted!`);
+        this.navCtrl.setRoot('HomePage');
+      });
+  }
 }
